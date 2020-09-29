@@ -1,0 +1,62 @@
+David Gantt
+
+HW2 comp15 README
+
+The purpose of this program is to allow the client to perform many
+manipulations on a doubly-linked list. The linked list is a very
+useful and basic data structure for storing lists of objects. Lists are
+pervasive and may be easily implemented using my class. The CharLinkedList
+class is, essentially, the built in string class. However, as explained in
+class, linked lists are used very frequently in industry. Professor Sheldon
+mentioned that the default data structure in the Linux kernel is a doubly
+linked circular list. The uses of this program are many, and the client is
+provided with a versatile range of tools to manipulate such a list.
+
+Acknowledgements: I would like to thank my tutor, Julia Lober. I modeled my
+programs after many shown by professor Sheldon in class. I would like
+to thank my mother and father and the lord above. I would also like to thank
+my roommate for helping me understand linked lists conceptually.
+
+Files: I provided "charLinkedList.h" which is the class definiton including a
+doubly-linked list. I also provided "charLinkedList.cpp" which is the 
+implementation for the doubly-linked list. I provided the testing file, 
+"testCharLinkedList.h" which tests all of the functions in the class. I also
+provided this README, and a Makefile which compiles the program.
+
+Compile using the following command: "make" OR "make CharLinkedList"
+Run using the following command: "./charLinkedList"
+
+Data structure: For this assignment I implemented a doubly-linked list.
+To the client, this appears just like an array list. Every node has three
+struct members, a data member and two pointers (one to the previous node
+and one to the next node). One drawback of linked lists is that it has
+linear access time, as opposed to constant time of an array. This means that
+it takes longer to insert in the access of a linked list than it does an array
+list. Memory in an array is contiguous, whereas memory in a linked list is
+diffuse. However, linked lists have constant front insertion times. Unlike
+an array list, linked lists don't lose time to expansion. 
+
+Testing: I created a testing function for every one of my public member
+functions in the CharLinkedList class. I took care to test every edge case.
+These included, for example, calling insertInOrder into the front and back
+of a list, inserting/removing out of bounds of the list, and using my
+assignment operator on both empty and nonempty lists, etc. Because many
+tests threw error exceptions, I commented them out in main.
+
+Q1: PushAtFront was easier for the linked list, because it did not require
+shifting the list to the right. The popFromFront function was easy for the
+same reason. The shrink/expand functions were very easy, because linked lists
+do not use excess memory.
+
+Q2: Both removeAt and insertAt where much harder to do, because they required
+shifting around both the next and previous pointers, which was much more 
+difficult than manipulating an array list. I had to account for inserting/
+removing at the front of empty lists, at the front of nonempty lists, in the
+back of empty lists, in the back of nonempty lists, and in the middle of non
+empty lists. These are a lot of cases to consider.
+
+Q3: The client would have to include CharLinkedList rather than CharArrayList
+and change every instance of the latter to the former in their client file.
+In other words, they would have to find and replace "CharArrayList" with
+"CharLinkedList". This is the beauty of abstraction. For this project, my 
+client was the testing file. 
