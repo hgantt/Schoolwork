@@ -1,0 +1,85 @@
+/**********************************************************
+* HW3: Metro Simulator
+* Comp 15
+* README
+* David Gantt
+* February 12, 2020
+*********************************************************/
+
+Compile/run:
+     - Compile using
+            make MetroSim
+     - run executable with
+            ./MetroSim stationsFile passFile [commands]
+
+
+Program Purpose:
+
+This homework assignment handles a running train to accomodate
+passengers arriving/departing a metro. Learn how to design and
+modularize code and work with documented libraries.
+
+
+Acknowledgements: 
+
+I would like to thank Mark Sheldon for explaining lists to me, the TA
+Destin for explaining vectors on CampusWire. I would like to thank my
+roommate for explaining input and output streams to me. I would like to
+acknowledge that I read a lot on geeksforgeeks before
+understanding how to parse strings to process the "p 3 4" commands. This
+research helped me to write my code and implement these functionalities.
+
+
+Files: 
+
+main.cpp:
+     STUDENT TO-DO: Main file should be short and handle simple driver
+     functions such as reading in files. My main file contains very little,
+     only code to evaluate how many arguments are passed, initialize a
+     MetroSim obj, and run its play functions
+
+MetroSim.cpp:
+     STUDENT TO-DO: Implementation of MetroSim class.  Main
+     functionality of running the Metro Simulation, should be able to
+     move trains and deal with passengers going on/off the train. Here
+     I implement the MetroSim class and all of its functionality, including
+     adding and removing passengers, moving the train, and processing commands
+
+MetroSim.h:
+        STUDENT TO-DO: Interface of MetroSim class. Here I define the MetroSim
+        class and its many public member fxns.
+
+stations.txt:
+        an example file containing a list of stations.
+
+test_commands.txt:
+        sample list of commands that you could give to the simulator
+
+the_metroSim:
+        reference implementation for students to see how to use the program
+
+
+Note:  the program should handle all cases.
+
+Data Structures:
+I use a struct Passenger, a vector of Passengers called a PassengerQueue,
+a struct called Station, and a vector of Stations to represent a rail line.
+I also use a vector of PassengerQueues to represent a train.
+
+Testing:
+There are many test cases to consider, including: adding and dropping off
+at consecutive stations, at the same station, at the first and last stations,
+making sure to pickup and drop off at the correct times, making sure that P's
+were organized by ascending order of 'to' station on the train. 
+I tested these each, comparing them to the reference implementation. 
+I encountered bugs at one point or another in every of the above cases, 
+and it took careful thinking about my indices to debug this, as well as 
+consideration of the order in which the train moves, picks 
+up passengers, and drops them off. I will note that, when I added 
+functionality to read in commands from a text file, I was relieved that
+everything worked and read into the output file. If the whole class is
+working, every of its member functions are also working.
+
+
+Note: This homework comes partially implemented, but student must also
+create the driver and add class functionality.
