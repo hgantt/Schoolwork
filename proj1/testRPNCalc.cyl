@@ -1,0 +1,75 @@
+%% David Gantt
+%% comp15
+%% project 1
+%% February 2020
+%% testRPNCalc.cyl includes commands to test all of the capacities of
+%% the RPNCalc class. Below are blocks of command which test each command.
+%% These include pushing integers, bools, and RStrings onto the stack, 
+%% using arithmetic and logical operators, and the harder commands
+%% (exec, if, file). I pipe this file into my program and pipe cout to a
+%% text file, which I use to diff test with the reference implementation.
+
+% test the capacity to push Datum onto the stack
+{ testPushing.cylc }
+file
+clear
+
+% test the "not" command
+{ testNot.cylc }
+file
+clear
+
+% test the "print" command
+{ testPrint.cylc }
+file
+clear
+
+% test the clear command
+{ testClear.cylc }
+file
+clear
+
+% test the drop command
+{ testDrop.cylc }
+file
+clear
+
+% test the dup command
+{ testDup.cylc }
+file
+clear
+
+% test the swap command
+{ testSwap.cylc }
+file
+clear
+
+%% ARITHMETIC OPERATORS
+{ testArithmetic.cylc }
+file
+clear
+
+%% test the logical operators
+{ testLogicalOps.cylc }
+file
+clear
+
+%% test a bunch of random input
+{ testRandomInput.cylc }
+file
+clear
+
+%% test exec
+{ testExec.cylc }
+file
+clear
+
+%% test file
+{ testFile.cylc }
+file
+clear
+
+%% test if 
+{ testIf.cylc }
+file
+clear

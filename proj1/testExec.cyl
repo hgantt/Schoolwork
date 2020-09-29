@@ -1,0 +1,17 @@
+3 print
+{ 4 * }
+print
+exec print
+clear
+exec 						%% nothing to exec here, should error
+0
+{ 0 == { { yes } print drop } { { no } print drop } if }
+print
+exec
+print
+%% test both nested and non-nested rStrings
+clear
+4
+exec
+print
+clear

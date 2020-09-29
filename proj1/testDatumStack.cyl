@@ -1,0 +1,21 @@
+%% David Gantt
+%% comp15
+%% project 1
+%% February 2020
+%% this is my testing file for the DatumStack class. What follows are a bunch
+%% of commands for testing the DatumStack functionality and all of its public
+%% member functions. There is a block of commands to test each function (ie 
+%% to unit test the functions). They are as follows:
+
+%% isEmpty
+
+
+%% clear
+
+%% size
+
+%% top
+
+%% pop
+
+%% push

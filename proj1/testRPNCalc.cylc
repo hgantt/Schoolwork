@@ -1,0 +1,39 @@
+{ testPushing.cylc }
+file
+clear
+{ testNot.cylc }
+file
+clear
+{ testPrint.cylc }
+file
+clear
+{ testClear.cylc }
+file
+clear
+{ testDrop.cylc }
+file
+clear
+{ testDup.cylc }
+file
+clear
+{ testSwap.cylc }
+file
+clear
+{ testArithmetic.cylc }
+file
+clear
+{ testLogicalOps.cylc }
+file
+clear
+{ testRandomInput.cylc }
+file
+clear
+{ testExec.cylc }
+file
+clear
+{ testFile.cylc }
+file
+clear
+{ testIf.cylc }
+file
+clear

@@ -1,0 +1,6 @@
+swap % on empty
+5 6
+print
+swap
+print % check swap on two ints
+clear

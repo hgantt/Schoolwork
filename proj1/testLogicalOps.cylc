@@ -1,0 +1,14 @@
+3 4 < print clear
+4 3 < print clear
+3 4 > print clear
+4 3 > print clear
+3 4 >= print clear
+4 3 >= print clear
+3 4 <= print clear
+4 3 <= print clear
+4 4 == print clear
+3 4 == print clear
+3 == print
+clear
+< > == <= >=
+clear

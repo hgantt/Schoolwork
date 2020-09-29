@@ -1,0 +1,6 @@
+{ 4 * }
+file	% test not a real file
+clear
+4
+file
+clear

@@ -1,0 +1,15 @@
+% this tests all of the logical operators
+3 4 < print clear
+4 3 < print clear
+3 4 > print clear
+4 3 > print clear
+3 4 >= print clear
+4 3 >= print clear
+3 4 <= print clear
+4 3 <= print clear
+4 4 == print clear
+3 4 == print clear
+3 == print
+clear
+< > == <= >= % test on empty stack
+clear

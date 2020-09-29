@@ -1,0 +1,20 @@
+dup
+4
+print
+dup
+print
+drop
+print
+drop
+print
+{ 3 * }
+print
+dup
+print
+drop
+print
+drop
+print
+drop
+print
+clear

@@ -1,0 +1,12 @@
+drop		% drop empty
+print
+4
+print
+drop		% one drop
+print
+4 5 6 7 
+drop
+drop
+drop
+drop		% many drops
+clear

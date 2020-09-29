@@ -1,0 +1,30 @@
+% test pushing an integer
+4		% push int
+print
+drop
+drop	
+-1		% push neg int
+print
+3
+print
+clear
+
+% test pushing a bool
+#t
+print
+#f
+print		% push both types
+drop
+drop
+drop
+clear
+
+% test pushing an RString
+{ 4 }
+print
+{ 3 { 4 2 / } / }
+print
+{ { #t } { #f } }
+print
+{#t    }
+print

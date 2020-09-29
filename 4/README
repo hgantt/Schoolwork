@@ -1,0 +1,50 @@
+David Gantt
+Comp15
+HW4
+March 2020
+
+Purpose:
+This program allows the client to manipulate a binary search tree
+which handles duplicates. The client may manipulate the tree with a number
+of public functions, including counting the nodes and their values,
+inserting and removing nodes, and printing the tree.
+
+Acknowledgements: 
+I'd like to thank the TAs for helping me with this. The driver and some
+functions were provided by the course staff.
+
+Files: 
+BinarySearchTree.h was provided to us, but I added two modular private
+functions.
+BinarySearchTree.cpp was partially implemented, but it contains the 
+implementation for the class (definitions of all public and private
+functions)
+testingBST.cpp contains the unit testing (discussed below) for the
+class
+README is this file.
+Makefile was provided for us, and enables easy compilation and linking
+
+Data Structures:
+This program implements a binary search tree. A binary search tree is
+a binary tree with an invariant: every value greater than a value n
+is placed to the right of n, and every value less than n is placed
+to its left. A binary tree means that it is a tree with the invariant
+that every node has at most two children, denoted with a left and right
+node pointer. BST's are useful because of their organization. They
+enable search in O(logn) time, which is faster than arrays and linked lists.
+However, insertion of nodes take O(n) time for a degenerate tree,
+while it is constant in array and linked lists. BSTs also have the drawback
+of not being necessarily balanced, unlike an AVL tree.
+
+
+Testing:
+I unit tested every public function in testingBST.cpp. I tested many cases,
+including empty trees, single node trees, and trees with many nodes for the
+count_total(), node_count(), insert(), remove(), functions. For contains, I
+tested values which were and were not in the tree. For remove, I tested
+removing leaves, nodes with one child, and nodes with two children. I tested
+removing nodes with a count > 1. I tested tree_height() on empty, single-node,
+and many-node trees. I completed each test after writing individual functions,
+and it revealed some latent bugs in my program. For example, my testRemove()
+function revealed that I was not correctly removing nodes when the 
+node-to-replace it was a duplicate. This bug I resolved after testing.

@@ -1,0 +1,20 @@
+% these test the five arithmetic operations
+{ testAddition.cylc }
+file
+clear
+
+{ testSubtraction.cylc }
+file
+clear
+
+{ testMultiplication.cylc }
+file
+clear
+
+{ testDivision.cylc }
+file
+clear
+
+{ testModulo.cylc }
+file
+clear

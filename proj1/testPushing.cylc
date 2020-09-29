@@ -1,0 +1,25 @@
+4
+print
+drop
+drop	
+-1
+print
+3
+print
+clear
+#t
+print
+#f
+print
+drop
+drop
+drop
+clear
+{ 4 }
+print
+{ 3 { 4 2 / } / }
+print
+{ { #t } { #f } }
+print
+{#t    }
+print

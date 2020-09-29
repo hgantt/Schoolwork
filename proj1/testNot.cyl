@@ -1,0 +1,14 @@
+#t
+print
+not
+print
+clear
+#f
+print
+not 			% try not on both bools
+print
+clear
+not 			% call not on empty
+clear
+4
+not

@@ -1,0 +1,20 @@
+dup		% on empty stack
+4
+print
+dup		% dup  integer
+print
+drop
+print
+drop
+print
+{ 3 * } % dup rstring
+print
+dup
+print
+drop
+print
+drop
+print
+drop
+print
+clear

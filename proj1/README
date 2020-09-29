@@ -1,0 +1,143 @@
+David Gantt
+Comp15
+Project 1
+February 2020
+
+This program is a Reverse Polish notation (RPN) calculator. The client
+may perform many operations using this calculator, including addition,
+subtraction, multiplication, division, modulo, and various logical
+operators like less-than, greater-than, equal-to, and all the permutations
+of them. The RPN calculator is also known as the Polish postfix notation
+calculator, and is commonly used.
+
+Acknowledgements: 
+I would like to thank the TA's for helping me design my plan to implement
+the RPN calculator. The TA's helped me so much.
+I would also like to thank the staff for writing a very clear spec. 
+
+Files: 
+Datum.h: This is the definition of the Datum class. This file was provided 
+to us by the staff. 
+
+DatumStack.h: This is the definition of the DatumStack class. It is the header
+file which contains all of the function declarations and private data members,
+including a vector of Datum.
+
+DatumStack.cpp: This is the implementation of the DatumStack class. It defines
+all of the functions previously declared in Datumstack.h. 
+
+testDatumStack.cpp: This is the testing file for the DatumStack class. It 
+contains a function to unit test every of the public member functions in the
+DatumStack class.
+
+RPNCalc.h: This is the definition of the RPNCalc class. It includes all of 
+the function declarations and private data members, including an instance
+of the DatumStack class and MANY, MODULAR private methods. This was very
+necessary to keep my fxns under 30 lines.
+
+RPNCalc.cpp: This is the implementation of my RPNCalc class. It includes
+the definitions of the functions, both public and private. I make use of
+much modularity, calling functions within functions within functions.
+
+testRPNCalc.cpp: This is my testing file for RPNCalc. However, I tested
+RPNCalc by doing the following. I have a "testRPNCalc.cyl" in which I
+perform unit testing. I did this with both my and the reference implementation
+and diff tested them. This, I found, was the most prudent and fastest
+way to test.
+
+testRPNCalc.cyl: The commands file which runs all of the following, more 
+modular files using the file command.
+
+Testing files:
+testAddition.cyl: tests the addition command
+testSubtraction.cyl: tests the subtraction command
+testMultiplication.cyl: tests the multiplication command
+testDivision.cyl: tests the division command
+testModulo.cyl: tests the modulo command
+testArithmetic.cyl: tests the above commands
+testLogicalOps.cyl: tests the logical operator commands
+testNot.cyl: tests the not command
+testPrint.cyl: tests the print command
+testPushing.cyl tests the pushing commands (int, bool, rString)
+testRandomInput.cyl: tests unacceptable input
+testSwap.cyl:  tests the swap command
+testDrop.cyl: tests the drop command
+testDup.cyl: tests the dup command
+testIf.cyl: tests the if command
+testFile.cyl: tests the file command
+testExec.cyl: tests the exec command
+
+Makefile: contains rules for compiling and executing the RPNCalc program
+
+README: This file.
+
+To compile: make DatumStack
+To run: ./DatumStack
+
+Data structures: 
+
+There are many data structures combined in project one. For
+example, we are provided a class definition for a Datum, which is then used in
+the DatumStack class. Here, we make a vector of Datums. In the RPNCalc class,
+I initialize a DatumStack object. These multiple
+classes allow for a great amount of modularity and readability. The classes
+are themselves a means of procedural and data abstraction. 
+
+Let's talk about stacks. The stack is the main data structure for project one.
+In a stack, all the "action" occurs on one end of the structure. Unlike a 
+queue, elements are added and removed from one side of the structure. This 
+was necessary for this project, because FILO (first in last out) is how the
+RPN calculators (or any calculators for that matter) are used. I am operating
+on the numbers, or booleans, or RStrings I typed MOST RECENTLY. So, the stack
+made sense here. Stacks are used all the time. Colloquially, we think of
+stacks as being the "stack of plates" at Dewick. This is a helpful image. In
+CS, stacks may be used for backtracking. Imagine you are in a maze, and want
+to go back the path you came. A stack is very helpful in this case, because
+you want to make every move in reverse. We also speak about the "function
+stack," which we use to model the activation record of a program.
+
+Let me give some examples of some interesting algorithms I used. In the
+parseRString function, which I changed since phase 1, I kept track of an
+integer to read a stream until the rString had been closed. This works
+with any amount of nested rStrings. This algorithm was very effective,
+because it closes the stream precisely when a closing brace is found.
+Another algorithm I used was in my runFile function. This function, which
+executes the "file" command, calls a more modular function which removes
+the brackets and spaces of an RString containing just a file. Then, it opens
+a stream to this file and calls another function which processes single 
+commands until the file is over.
+
+Testing: 
+
+I tested both the DatumStack class and the RPNCalc class.
+
+For the DatumStack class, I have a function called testDatumStack.cpp
+which contains many unit testing functions to test each of the public
+methods in DatumStack. These are: isEmpty, clear, size, top, pop, and push.
+These are the cases I considered: empty stacks on both non-empty stacks,
+manipulating Datums of "type" bool, integer, or RString. I also test both
+the default and paramaterized constructor, ensuring that each was initalized
+as expected. DatumStack passed all of its tests.
+
+For the RPNCalc class, I employed a different testing method. It was still
+unit testing, but not with many functions. I created a "testRPNCalc.cyl" file
+that contains RStrings of many more modular files (listed above), including,
+for example, "testAddition.cyl". I execute each using the file command, 
+testing the file command in both this manner and with its own .cyl file. 
+I used the following commands in terminal to execute this unit testing.
+First, I compiled all of the .cyl files using "./cylc" (provided to us).
+Then, I piped both cout and cerr to two different text files, one from
+my implementation and one with the reference implementation. I typed the
+following commands:
+
+./cylc testRPNCalc.cyl
+./theCalcYouLater < testRPNCalc.cylc > & referenceOutput.txt
+./CalcYouLater < testRPNCalc.cylc > & myOutput.txt
+diff myOutput.txt referenceOutput.txt
+
+Here, I am piping the commands file into both my and the reference 
+implementation, then piping each to its own output text file. I compare
+these files using the "diff" command to show that mine works exactly
+in the manner of the reference implementation. So, I did not use the
+testRPNCalc.cpp to test my he RPNCalc class passed
+all of its tests.
