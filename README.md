@@ -2,4 +2,4 @@
 
 David Gantt
 
-This is all of the code I've written for school assignments.
+All of the code I've written for classes at Tufts University and University of Maryland.
